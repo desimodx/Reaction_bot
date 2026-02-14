@@ -22,16 +22,16 @@ def keep_alive():
 API_TOKEN = os.environ.get('BOT_TOKEN')
 bot = telebot.TeleBot(API_TOKEN)
 
-# Sabhi reactions jo image me hain:
+# Updated list (🤬, 💩, aur 😡 ko nikal diya gaya hai):
 REACTION_LIST = [
     "❤️", "👍", "👎", "🔥", "🥰", "👏", "😁", "🤔", "🤯", "😱", 
-    "🤬", "😢", "🎉", "🤩", "🤮", "💩", "🙏", "👌", "🕊️", "🤡", 
+    "😢", "🎉", "🤩", "🤮", "🙏", "👌", "🕊️", "🤡", 
     "🥱", "🥴", "😍", "🐳", "❤️‍🔥", "🌚", "🌭", "💯", "🤣", "⚡️", 
     "🍌", "🏆", "💔", "🤨", "😐", "🍓", "🍾", "💋", "🖕", "😈", 
     "😴", "😭", "🤓", "👻", "👨‍💻", "👀", "🎃", "🙈", "😇", "😨", 
     "🤝", "✍️", "🤗", "🫡", "🎅", "🎄", "☃️", "💅", "🤪", "🗿", 
     "🆒", "💘", "🙉", "🦄", "😘", "💊", "🙊", "😎", "👾", "🤷‍♂️", 
-    "🤷", "🤷‍♀️", "😡"
+    "🤷", "🤷‍♀️"
 ]
 
 @bot.channel_post_handler(content_types=['text', 'photo', 'video', 'document', 'audio'])
@@ -50,5 +50,6 @@ def auto_react(message):
 
 if __name__ == "__main__":
     keep_alive()
-    print("Bot is starting with all reactions...")
+    print("Bot is starting with updated reaction list...")
     bot.infinity_polling()
+        
